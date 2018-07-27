@@ -15,7 +15,7 @@ Pod::Spec.new do |s|
   s.source             = { :git => "https://github.com/Pintumo/PNTMDraggablePlaceDetails.git", :tag => "#{s.version}" }
   s.source_files  = "PNTMDraggablePlaceDetails", "PNTMDraggablePlaceDetails/**/*.{swift}"
   s.public_header_files = "PNTMDraggablePlaceDetails/**/*.h"
-  #s.resources = "Resources/*.png"
+  s.resources           = 'PNTMDraggablePlaceDetails/**/*.xcassets'
   # s.frameworks = "SomeFramework", "AnotherFramework"
   s.dependency "Kingfisher"
 end
