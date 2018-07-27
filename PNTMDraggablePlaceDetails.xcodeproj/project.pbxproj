@@ -8,12 +8,44 @@
 
 /* Begin PBXBuildFile section */
 		F1E49707210B2F260020132B /* PNTMDraggablePlaceDetails.h in Headers */ = {isa = PBXBuildFile; fileRef = F1E49705210B2F260020132B /* PNTMDraggablePlaceDetails.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F1E49742210B5BC00020132B /* DraggablePlaceDetailsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E4972E210B5BBF0020132B /* DraggablePlaceDetailsStore.swift */; };
+		F1E49743210B5BC00020132B /* UIActivityControllerHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E49730210B5BBF0020132B /* UIActivityControllerHelpers.swift */; };
+		F1E49744210B5BC00020132B /* UIApplicationHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E49731210B5BBF0020132B /* UIApplicationHelpers.swift */; };
+		F1E49745210B5BC00020132B /* StringHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E49732210B5BBF0020132B /* StringHelpers.swift */; };
+		F1E49746210B5BC00020132B /* UIAlertControllerHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E49733210B5BBF0020132B /* UIAlertControllerHelpers.swift */; };
+		F1E49747210B5BC00020132B /* DraggablePlaceDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E49735210B5BC00020132B /* DraggablePlaceDetailsView.swift */; };
+		F1E49748210B5BC00020132B /* DraggablePlaceDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E49736210B5BC00020132B /* DraggablePlaceDetailsViewController.swift */; };
+		F1E49749210B5BC00020132B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F1E49737210B5BC00020132B /* Assets.xcassets */; };
+		F1E4974A210B5BC00020132B /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E49738210B5BC00020132B /* Constants.swift */; };
+		F1E4974B210B5BC00020132B /* ContactCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E4973A210B5BC00020132B /* ContactCell.swift */; };
+		F1E4974C210B5BC00020132B /* RatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E4973B210B5BC00020132B /* RatingView.swift */; };
+		F1E4974D210B5BC00020132B /* ReviewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E4973C210B5BC00020132B /* ReviewCell.swift */; };
+		F1E4974E210B5BC00020132B /* TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E4973D210B5BC00020132B /* TableView.swift */; };
+		F1E4974F210B5BC00020132B /* HeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E4973E210B5BC00020132B /* HeaderCell.swift */; };
+		F1E49750210B5BC00020132B /* ImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E4973F210B5BC00020132B /* ImageCell.swift */; };
+		F1E49751210B5BC00020132B /* DraggablePlaceDetailsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E49741210B5BC00020132B /* DraggablePlaceDetailsModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		F1E49702210B2F260020132B /* PNTMDraggablePlaceDetails.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PNTMDraggablePlaceDetails.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1E49705210B2F260020132B /* PNTMDraggablePlaceDetails.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PNTMDraggablePlaceDetails.h; sourceTree = "<group>"; };
 		F1E49706210B2F260020132B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F1E4972E210B5BBF0020132B /* DraggablePlaceDetailsStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DraggablePlaceDetailsStore.swift; sourceTree = "<group>"; };
+		F1E49730210B5BBF0020132B /* UIActivityControllerHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIActivityControllerHelpers.swift; sourceTree = "<group>"; };
+		F1E49731210B5BBF0020132B /* UIApplicationHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIApplicationHelpers.swift; sourceTree = "<group>"; };
+		F1E49732210B5BBF0020132B /* StringHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringHelpers.swift; sourceTree = "<group>"; };
+		F1E49733210B5BBF0020132B /* UIAlertControllerHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIAlertControllerHelpers.swift; sourceTree = "<group>"; };
+		F1E49735210B5BC00020132B /* DraggablePlaceDetailsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DraggablePlaceDetailsView.swift; sourceTree = "<group>"; };
+		F1E49736210B5BC00020132B /* DraggablePlaceDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DraggablePlaceDetailsViewController.swift; sourceTree = "<group>"; };
+		F1E49737210B5BC00020132B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F1E49738210B5BC00020132B /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		F1E4973A210B5BC00020132B /* ContactCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactCell.swift; sourceTree = "<group>"; };
+		F1E4973B210B5BC00020132B /* RatingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RatingView.swift; sourceTree = "<group>"; };
+		F1E4973C210B5BC00020132B /* ReviewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewCell.swift; sourceTree = "<group>"; };
+		F1E4973D210B5BC00020132B /* TableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableView.swift; sourceTree = "<group>"; };
+		F1E4973E210B5BC00020132B /* HeaderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeaderCell.swift; sourceTree = "<group>"; };
+		F1E4973F210B5BC00020132B /* ImageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCell.swift; sourceTree = "<group>"; };
+		F1E49741210B5BC00020132B /* DraggablePlaceDetailsModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DraggablePlaceDetailsModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,10 +78,66 @@
 		F1E49704210B2F260020132B /* PNTMDraggablePlaceDetails */ = {
 			isa = PBXGroup;
 			children = (
-				F1E49705210B2F260020132B /* PNTMDraggablePlaceDetails.h */,
+				F1E49737210B5BC00020132B /* Assets.xcassets */,
+				F1E49738210B5BC00020132B /* Constants.swift */,
+				F1E4972F210B5BBF0020132B /* Helpers */,
 				F1E49706210B2F260020132B /* Info.plist */,
+				F1E49740210B5BC00020132B /* Models */,
+				F1E49705210B2F260020132B /* PNTMDraggablePlaceDetails.h */,
+				F1E49734210B5BC00020132B /* Screens */,
+				F1E4972D210B5BBF0020132B /* Stores */,
+				F1E49739210B5BC00020132B /* Views */,
 			);
 			path = PNTMDraggablePlaceDetails;
+			sourceTree = "<group>";
+		};
+		F1E4972D210B5BBF0020132B /* Stores */ = {
+			isa = PBXGroup;
+			children = (
+				F1E4972E210B5BBF0020132B /* DraggablePlaceDetailsStore.swift */,
+			);
+			path = Stores;
+			sourceTree = "<group>";
+		};
+		F1E4972F210B5BBF0020132B /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				F1E49730210B5BBF0020132B /* UIActivityControllerHelpers.swift */,
+				F1E49731210B5BBF0020132B /* UIApplicationHelpers.swift */,
+				F1E49732210B5BBF0020132B /* StringHelpers.swift */,
+				F1E49733210B5BBF0020132B /* UIAlertControllerHelpers.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		F1E49734210B5BC00020132B /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				F1E49735210B5BC00020132B /* DraggablePlaceDetailsView.swift */,
+				F1E49736210B5BC00020132B /* DraggablePlaceDetailsViewController.swift */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		F1E49739210B5BC00020132B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				F1E4973A210B5BC00020132B /* ContactCell.swift */,
+				F1E4973B210B5BC00020132B /* RatingView.swift */,
+				F1E4973C210B5BC00020132B /* ReviewCell.swift */,
+				F1E4973D210B5BC00020132B /* TableView.swift */,
+				F1E4973E210B5BC00020132B /* HeaderCell.swift */,
+				F1E4973F210B5BC00020132B /* ImageCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		F1E49740210B5BC00020132B /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				F1E49741210B5BC00020132B /* DraggablePlaceDetailsModel.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -95,6 +183,7 @@
 				TargetAttributes = {
 					F1E49701210B2F260020132B = {
 						CreatedOnToolsVersion = 10.0;
+						LastSwiftMigration = 1000;
 					};
 				};
 			};
@@ -120,6 +209,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F1E49749210B5BC00020132B /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -130,6 +220,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F1E4974B210B5BC00020132B /* ContactCell.swift in Sources */,
+				F1E4974E210B5BC00020132B /* TableView.swift in Sources */,
+				F1E49745210B5BC00020132B /* StringHelpers.swift in Sources */,
+				F1E49748210B5BC00020132B /* DraggablePlaceDetailsViewController.swift in Sources */,
+				F1E4974F210B5BC00020132B /* HeaderCell.swift in Sources */,
+				F1E49750210B5BC00020132B /* ImageCell.swift in Sources */,
+				F1E4974C210B5BC00020132B /* RatingView.swift in Sources */,
+				F1E49747210B5BC00020132B /* DraggablePlaceDetailsView.swift in Sources */,
+				F1E49746210B5BC00020132B /* UIAlertControllerHelpers.swift in Sources */,
+				F1E49744210B5BC00020132B /* UIApplicationHelpers.swift in Sources */,
+				F1E49751210B5BC00020132B /* DraggablePlaceDetailsModel.swift in Sources */,
+				F1E49743210B5BC00020132B /* UIActivityControllerHelpers.swift in Sources */,
+				F1E49742210B5BC00020132B /* DraggablePlaceDetailsStore.swift in Sources */,
+				F1E4974A210B5BC00020132B /* Constants.swift in Sources */,
+				F1E4974D210B5BC00020132B /* ReviewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -261,10 +366,10 @@
 		F1E4970B210B2F260020132B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = 642J3P53HE;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -275,9 +380,9 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.pintumo.PNTMDraggablePlaceDetails;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -286,10 +391,10 @@
 		F1E4970C210B2F260020132B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = 642J3P53HE;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -300,7 +405,6 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.pintumo.PNTMDraggablePlaceDetails;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.2;
