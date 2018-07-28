@@ -1,0 +1,31 @@
+{
+  "name": "PNTMDraggablePlaceDetails",
+  "swift_version": "4.2",
+  "version": "0.0.1",
+  "summary": "Simple Library to display details of POIs.",
+  "description": "Simple Library to display details of POIs in a draggable modally presented UIViewController.",
+  "homepage": "https://github.com/Pintumo/PNTMDraggablePlaceDetails",
+  "license": "MIT",
+  "authors": {
+    "3vangelos": "evangelos@posteo.eu"
+  },
+  "social_media_url": "http://twitter.com/3vangelos",
+  "platforms": {
+    "ios": "11.0"
+  },
+  "source": {
+    "git": "https://github.com/Pintumo/PNTMDraggablePlaceDetails.git",
+    "tag": "0.0.1"
+  },
+  "source_files": [
+    "PNTMDraggablePlaceDetails",
+    "PNTMDraggablePlaceDetails/**/*.{swift}"
+  ],
+  "public_header_files": "PNTMDraggablePlaceDetails/**/*.h",
+  "resources": "PNTMDraggablePlaceDetails/**/*.xcassets",
+  "dependencies": {
+    "Kingfisher": [
+
+    ]
+  }
+}

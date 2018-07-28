@@ -1,0 +1,6 @@
+framework module PNTMDraggablePlaceDetails {
+  umbrella header "PNTMDraggablePlaceDetails-umbrella.h"
+
+  export *
+  module * { export * }
+}

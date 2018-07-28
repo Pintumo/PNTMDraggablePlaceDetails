@@ -1,0 +1,4 @@
+target 'PNTMDraggablePlaceDetailsExample' do
+  use_frameworks!
+  pod 'PNTMDraggablePlaceDetails', :path => '../'
+end
