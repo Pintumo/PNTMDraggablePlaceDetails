@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F1315A80210CA87A0047AA70 /* Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1315A7F210CA87A0047AA70 /* Assets.swift */; };
 		F1E49707210B2F260020132B /* PNTMDraggablePlaceDetails.h in Headers */ = {isa = PBXBuildFile; fileRef = F1E49705210B2F260020132B /* PNTMDraggablePlaceDetails.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F1E49742210B5BC00020132B /* DraggablePlaceDetailsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E4972E210B5BBF0020132B /* DraggablePlaceDetailsStore.swift */; };
 		F1E49743210B5BC00020132B /* UIActivityControllerHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E49730210B5BBF0020132B /* UIActivityControllerHelpers.swift */; };
@@ -27,6 +28,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F1315A7F210CA87A0047AA70 /* Assets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Assets.swift; sourceTree = "<group>"; };
 		F1E49702210B2F260020132B /* PNTMDraggablePlaceDetails.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PNTMDraggablePlaceDetails.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1E49705210B2F260020132B /* PNTMDraggablePlaceDetails.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PNTMDraggablePlaceDetails.h; sourceTree = "<group>"; };
 		F1E49706210B2F260020132B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -114,6 +116,7 @@
 				F1E49731210B5BBF0020132B /* UIApplicationHelpers.swift */,
 				F1E49732210B5BBF0020132B /* StringHelpers.swift */,
 				F1E49733210B5BBF0020132B /* UIAlertControllerHelpers.swift */,
+				F1315A7F210CA87A0047AA70 /* Assets.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -238,6 +241,7 @@
 				F1E49747210B5BC00020132B /* DraggablePlaceDetailsView.swift in Sources */,
 				F1E49746210B5BC00020132B /* UIAlertControllerHelpers.swift in Sources */,
 				F1E49744210B5BC00020132B /* UIApplicationHelpers.swift in Sources */,
+				F1315A80210CA87A0047AA70 /* Assets.swift in Sources */,
 				F1E49751210B5BC00020132B /* DraggablePlaceDetailsModel.swift in Sources */,
 				F1E49743210B5BC00020132B /* UIActivityControllerHelpers.swift in Sources */,
 				F1E49742210B5BC00020132B /* DraggablePlaceDetailsStore.swift in Sources */,

@@ -51,7 +51,7 @@ class DraggablePlaceDetailsView: UIView {
         self.pageControl.bottomAnchor.constraint(equalTo: self.collectionView.bottomAnchor).isActive = true
         self.pageControl.heightAnchor.constraint(equalToConstant: 40.0).isActive = true
 
-        let cancelButtonImage = UIImage(named: "close_arrow")?.withRenderingMode(.alwaysTemplate)
+        let cancelButtonImage = Assets.close_arrow.image()?.withRenderingMode(.alwaysTemplate)
         self.cancelButton.setImage(cancelButtonImage, for: .normal)
         self.cancelButton.imageView?.tintColor = .white
         self.addSubview(self.cancelButton)

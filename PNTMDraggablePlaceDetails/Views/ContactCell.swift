@@ -5,7 +5,8 @@ class ContactCell: UITableViewCell {
         case address, phone, website
         
         func icon() -> UIImage? {
-            return UIImage(named: self.rawValue)
+            let bundle = Bundle(for: DraggablePlaceDetailsViewController.self)
+            return UIImage(named: self.rawValue, in: bundle, compatibleWith: nil)
         }
     }
     

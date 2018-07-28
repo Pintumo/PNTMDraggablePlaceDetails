@@ -34,7 +34,7 @@ class HeaderCell: UITableViewCell {
         self.isOpenLabel.leftAnchor.constraint(equalTo: self.nameLabel.leftAnchor).isActive = true
         self.isOpenLabel.rightAnchor.constraint(equalTo: self.nameLabel.rightAnchor).isActive = true
         
-        let routeButtonImage = UIImage(named: "icon_travelModel")?.withRenderingMode(.alwaysTemplate)
+        let routeButtonImage = Assets.icon_travelModel.image()?.withRenderingMode(.alwaysTemplate)
         self.routeButton.setImage(routeButtonImage, for: .normal)
         self.routeButton.titleLabel?.font = UIFont.systemFont(ofSize: 14, weight: .semibold)
         self.routeButton.setTitle("Route with...", for: .normal)
@@ -52,7 +52,7 @@ class HeaderCell: UITableViewCell {
         self.routeButton.rightAnchor.constraint(equalTo: self.centerXAnchor, constant: -5).isActive = true
         self.routeButton.heightAnchor.constraint(equalToConstant: 40).isActive = true
         
-        let shareButtonImage = UIImage(named: "icon_share")?.withRenderingMode(.alwaysTemplate)
+        let shareButtonImage = Assets.icon_share.image()?.withRenderingMode(.alwaysTemplate)
         self.shareButton.titleLabel?.font = UIFont.systemFont(ofSize: 14, weight: .semibold)
         self.shareButton.setImage(shareButtonImage, for: .normal)
         self.shareButton.setTitle("Share Location", for: .normal)

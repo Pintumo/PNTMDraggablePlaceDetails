@@ -26,9 +26,9 @@ class RatingView: UIView {
         let emptyStars = 5 - fullStars - halfStars
         
         var stars = [UIImageView]()
-        for _ in 0..<fullStars { stars.append(UIImageView(image: UIImage(named: "star_full"))) }
-        for _ in 0..<halfStars { stars.append(UIImageView(image: UIImage(named: "star_half"))) }
-        for _ in 0..<emptyStars { stars.append(UIImageView(image: UIImage(named: "star_empty"))) }
+        for _ in 0..<fullStars { stars.append(UIImageView(image: Assets.star_full.image())) }
+        for _ in 0..<halfStars { stars.append(UIImageView(image: Assets.star_half.image())) }
+        for _ in 0..<emptyStars { stars.append(UIImageView(image: Assets.star_empty.image())) }
         
         for (index, star) in stars.enumerated() {
             star.translatesAutoresizingMaskIntoConstraints = false
