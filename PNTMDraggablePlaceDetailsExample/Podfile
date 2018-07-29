@@ -1,4 +1,9 @@
+platform :ios, 11.0
 target 'PNTMDraggablePlaceDetailsExample' do
   use_frameworks!
   pod 'PNTMDraggablePlaceDetails', :path => '../'
+
+  post_install do |installer|
+    system("rm -rf ~/Library/Developer/Xcode/DerivedData/PNTMDraggablePlaceDetails*/Build")
+  end
 end

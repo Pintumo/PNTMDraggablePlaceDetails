@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		F1D15EA3210C9DC100F28E47 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D15EA2210C9DC100F28E47 /* AppDelegate.swift */; };
 		F1D15EA5210C9DC100F28E47 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D15EA4210C9DC100F28E47 /* ViewController.swift */; };
-		F1D15EA8210C9DC100F28E47 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F1D15EA6210C9DC100F28E47 /* Main.storyboard */; };
 		F1D15EAA210C9DC100F28E47 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F1D15EA9210C9DC100F28E47 /* Assets.xcassets */; };
 		F1D15EAD210C9DC100F28E47 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F1D15EAB210C9DC100F28E47 /* LaunchScreen.storyboard */; };
 		F70AC01E47091C3125CC965E /* Pods_PNTMDraggablePlaceDetailsExample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F74C8157E8C9C220563CC1F9 /* Pods_PNTMDraggablePlaceDetailsExample.framework */; };
@@ -31,12 +30,12 @@
 /* Begin PBXFileReference section */
 		38B28BB9C824330ABB5C0ADE /* Pods-PNTMDraggablePlaceDetailsExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PNTMDraggablePlaceDetailsExample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PNTMDraggablePlaceDetailsExample/Pods-PNTMDraggablePlaceDetailsExample.debug.xcconfig"; sourceTree = "<group>"; };
 		7C0167070DB46FB4BA3E1536 /* Pods-PNTMDraggablePlaceDetailsExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PNTMDraggablePlaceDetailsExample.release.xcconfig"; path = "Pods/Target Support Files/Pods-PNTMDraggablePlaceDetailsExample/Pods-PNTMDraggablePlaceDetailsExample.release.xcconfig"; sourceTree = "<group>"; };
+		F16569BD210E6C6600A1EAE1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		F16569BF210E6C9400A1EAE1 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		F1D15E9F210C9DC100F28E47 /* PNTMDraggablePlaceDetailsExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PNTMDraggablePlaceDetailsExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1D15EA2210C9DC100F28E47 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F1D15EA4210C9DC100F28E47 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		F1D15EA7210C9DC100F28E47 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F1D15EA9210C9DC100F28E47 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		F1D15EAC210C9DC100F28E47 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F1D15EAE210C9DC100F28E47 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F1ED3142210CA254002DB3EF /* PNTMDraggablePlaceDetailsExample.xcworkspace */ = {isa = PBXFileReference; lastKnownFileType = wrapper.workspace; name = PNTMDraggablePlaceDetailsExample.xcworkspace; path = ../PNTMDraggablePlaceDetailsExample.xcworkspace; sourceTree = "<group>"; };
 		F74C8157E8C9C220563CC1F9 /* Pods_PNTMDraggablePlaceDetailsExample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PNTMDraggablePlaceDetailsExample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -95,7 +94,6 @@
 			children = (
 				F1D15EA2210C9DC100F28E47 /* AppDelegate.swift */,
 				F1D15EA4210C9DC100F28E47 /* ViewController.swift */,
-				F1D15EA6210C9DC100F28E47 /* Main.storyboard */,
 				F1D15EA9210C9DC100F28E47 /* Assets.xcassets */,
 				F1D15EAB210C9DC100F28E47 /* LaunchScreen.storyboard */,
 				F1D15EAE210C9DC100F28E47 /* Info.plist */,
@@ -148,6 +146,7 @@
 			knownRegions = (
 				en,
 				Base,
+				de,
 			);
 			mainGroup = F1D15E96210C9DC100F28E47;
 			productRefGroup = F1D15EA0210C9DC100F28E47 /* Products */;
@@ -166,7 +165,6 @@
 			files = (
 				F1D15EAD210C9DC100F28E47 /* LaunchScreen.storyboard in Resources */,
 				F1D15EAA210C9DC100F28E47 /* Assets.xcassets in Resources */,
-				F1D15EA8210C9DC100F28E47 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -226,18 +224,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		F1D15EA6210C9DC100F28E47 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				F1D15EA7210C9DC100F28E47 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		F1D15EAB210C9DC100F28E47 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				F1D15EAC210C9DC100F28E47 /* Base */,
+				F16569BD210E6C6600A1EAE1 /* Base */,
+				F16569BF210E6C9400A1EAE1 /* de */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -249,6 +240,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -310,6 +302,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";

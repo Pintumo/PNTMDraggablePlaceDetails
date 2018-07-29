@@ -81,7 +81,9 @@ struct DraggablePlaceDetailsStore {
         cell.shareButton.addTarget(target, action: shareAction, for: .touchUpInside)
         cell.routeButton.addTarget(target, action: routeAction, for: .touchUpInside)
         cell.name = self.titleForType(.header)
-        cell.isOpen = model.open_now ?? false
+        cell.tags = model.localizedTags
+        cell.isOpen = model.open_now
+        cell.rating = model.rating
         return cell
     }
     

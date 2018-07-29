@@ -3,13 +3,15 @@ import UIKit
 class HeaderCell: UITableViewCell {
     
     public var name: String? { didSet { self.nameLabel.text = name }}
-    public var isOpen: Bool? { didSet { isOpenLabel.text = isOpen! ? "geöffnet" : "geschlossen" }}
+    public var tags: [String]? { didSet { self.setTags(tags) }}
+    public var isOpen: Bool? { didSet { self.setIsOpen(isOpen) }}
     public var rating: Float? { didSet { self.setRating(rating) }}
     
     let routeButton = UIButton(type: .custom)
     let shareButton = UIButton(type: .custom)
     
     private let nameLabel = UILabel()
+    private let tagsLabel = UILabel()
     private let isOpenLabel = UILabel()
     private let buttonLine = UIView()
     
@@ -26,18 +28,25 @@ class HeaderCell: UITableViewCell {
         self.nameLabel.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -Constants.cellInset).isActive = true
         self.nameLabel.leftAnchor.constraint(equalTo: self.leftAnchor, constant: Constants.cellInset).isActive = true
 
-        self.isOpenLabel.font = UIFont.systemFont(ofSize: 12)
+        self.tagsLabel.font = UIFont.systemFont(ofSize: 12)
+        self.tagsLabel.textColor = Constants.mainColor
+        self.addSubview(self.tagsLabel)
+        self.tagsLabel.translatesAutoresizingMaskIntoConstraints = false
+        self.tagsLabel.topAnchor.constraint(equalTo: self.nameLabel.bottomAnchor, constant: 10).isActive = true
+        self.tagsLabel.leftAnchor.constraint(equalTo: self.nameLabel.leftAnchor).isActive = true
+        
+        self.isOpenLabel.font = UIFont.systemFont(ofSize: 12, weight: .bold)
         self.isOpenLabel.textColor = Constants.mainColor
         self.addSubview(self.isOpenLabel)
         self.isOpenLabel.translatesAutoresizingMaskIntoConstraints = false
-        self.isOpenLabel.topAnchor.constraint(equalTo: self.nameLabel.bottomAnchor).isActive = true
-        self.isOpenLabel.leftAnchor.constraint(equalTo: self.nameLabel.leftAnchor).isActive = true
+        self.isOpenLabel.centerYAnchor.constraint(equalTo: self.tagsLabel.centerYAnchor).isActive = true
+        self.isOpenLabel.leftAnchor.constraint(equalTo: self.tagsLabel.rightAnchor).isActive = true
         self.isOpenLabel.rightAnchor.constraint(equalTo: self.nameLabel.rightAnchor).isActive = true
         
         let routeButtonImage = Assets.icon_travelModel.image()?.withRenderingMode(.alwaysTemplate)
         self.routeButton.setImage(routeButtonImage, for: .normal)
         self.routeButton.titleLabel?.font = UIFont.systemFont(ofSize: 14, weight: .semibold)
-        self.routeButton.setTitle("Route with...", for: .normal)
+        self.routeButton.setTitle(Localizable.routeWith.loc(), for: .normal)
         self.routeButton.imageEdgeInsets = UIEdgeInsets(top: 10, left: 0, bottom: 10, right: 10)
         self.routeButton.titleEdgeInsets = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 0)
         self.routeButton.imageView?.contentMode = .scaleAspectFit
@@ -55,7 +64,7 @@ class HeaderCell: UITableViewCell {
         let shareButtonImage = Assets.icon_share.image()?.withRenderingMode(.alwaysTemplate)
         self.shareButton.titleLabel?.font = UIFont.systemFont(ofSize: 14, weight: .semibold)
         self.shareButton.setImage(shareButtonImage, for: .normal)
-        self.shareButton.setTitle("Share Location", for: .normal)
+        self.shareButton.setTitle(Localizable.shareLocation.loc(), for: .normal)
         self.shareButton.imageEdgeInsets = UIEdgeInsets(top: 10, left: 0, bottom: 10, right: 10)
         self.shareButton.titleEdgeInsets = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 0)
         self.shareButton.imageView?.contentMode = .scaleAspectFit
@@ -88,7 +97,25 @@ class HeaderCell: UITableViewCell {
         let ratingView = RatingView(rating: rating)
         self.addSubview(ratingView)
         ratingView.translatesAutoresizingMaskIntoConstraints = false
-        ratingView.topAnchor.constraint(equalTo: self.nameLabel.bottomAnchor, constant: 10).isActive = true
+        ratingView.topAnchor.constraint(equalTo: self.isOpenLabel.bottomAnchor, constant: 5).isActive = true
         ratingView.leftAnchor.constraint(equalTo: self.nameLabel.leftAnchor).isActive = true
+    }
+    
+    private func setTags(_ tags: [String]?) {
+        if let tags = tags {
+            self.tagsLabel.text = tags.prefix(2).joined(separator: " ⋅ ")
+        } else {
+            self.tagsLabel.text = ""
+        }
+    }
+    
+    private func setIsOpen(_ isOpen: Bool?) {
+        if let isOpen = isOpen, isOpen {
+            self.isOpenLabel.textColor = #colorLiteral(red: 0.4666666687, green: 0.7647058964, blue: 0.2666666806, alpha: 1)
+            self.isOpenLabel.text = " ⋅ \(Localizable.open.loc())"
+        }
+        else{
+            self.isOpenLabel.textColor = #colorLiteral(red: 0.9254902005, green: 0.2352941185, blue: 0.1019607857, alpha: 1)
+            self.isOpenLabel.text = " ⋅ \(Localizable.closed.loc())" }
     }
 }

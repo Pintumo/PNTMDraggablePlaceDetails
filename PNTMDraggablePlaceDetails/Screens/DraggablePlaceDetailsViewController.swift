@@ -70,7 +70,7 @@ extension DraggablePlaceDetailsViewController: UITableViewDataSource, UITableVie
     }
     
     public func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return section == 0 ? nil : "Bewertungen"
+        return section == 0 ? nil : Localizable.reviews.loc()
     }
     
     public func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

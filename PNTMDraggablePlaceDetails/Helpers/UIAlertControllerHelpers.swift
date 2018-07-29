@@ -3,7 +3,7 @@ import UIKit
 
 extension UIAlertController {
     static func routeToLocation(_ location: CLLocationCoordinate2D, presenter: UIViewController) {
-        let alert = UIAlertController(title: "Route with...", message: nil, preferredStyle: .actionSheet)
+        let alert = UIAlertController(title: Localizable.routeWith.loc(), message: nil, preferredStyle: .actionSheet)
         
         if (UIApplication.shared.canOpenURL(URL(string:"comgooglemaps://")!))
         {
@@ -16,7 +16,7 @@ extension UIAlertController {
             routeWithAppleMapsToLocation(location)
         })
         
-        alert.addAction(UIAlertAction(title: "Cancel", style: .default) { _ in
+        alert.addAction(UIAlertAction(title: Localizable.cancel.loc(), style: .default) { _ in
             return
         })
         

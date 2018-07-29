@@ -3,6 +3,7 @@ import MapKit
 public struct DraggablePlaceDetailsPlaceModel {
     let googlePlaceId: String?
     let name: String?
+    let localizedTags: [String]?
     let description: String?
     let address: String?
     let location: CLLocationCoordinate2D?
@@ -15,6 +16,7 @@ public struct DraggablePlaceDetailsPlaceModel {
     
     public init(googlePlaceId: String? = nil,
                 name: String? = nil,
+                localizedTags: [String]? = nil,
                 description: String? = nil,
                 address: String? = nil,
                 location: CLLocationCoordinate2D? = nil,
@@ -26,6 +28,7 @@ public struct DraggablePlaceDetailsPlaceModel {
                 reviews: [DraggablePlaceDetailsReviewModel]? = nil) {
         self.googlePlaceId = googlePlaceId
         self.name = name
+        self.localizedTags = localizedTags
         self.description = description
         self.address = address
         self.location = location

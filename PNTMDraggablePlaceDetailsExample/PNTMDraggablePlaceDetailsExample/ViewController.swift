@@ -27,6 +27,7 @@ class ViewController: UIViewController {
     lazy var model = DraggablePlaceDetailsPlaceModel(
         googlePlaceId: nil,
         name: "Some Restaurant",
+        localizedTags: ["Cafe", "Restaurant", "Bar"],
         description: "Some Description",
         address: "Some Address in some City in some Country",
         location: CLLocationCoordinate2D(latitude: 52.0, longitude: 13.0),

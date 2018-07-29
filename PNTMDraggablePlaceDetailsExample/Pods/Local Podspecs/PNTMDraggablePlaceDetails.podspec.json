@@ -19,10 +19,13 @@
   },
   "source_files": [
     "PNTMDraggablePlaceDetails",
-    "PNTMDraggablePlaceDetails/**/*.{swift}"
+    "PNTMDraggablePlaceDetails/**/*.swift"
   ],
   "public_header_files": "PNTMDraggablePlaceDetails/**/*.h",
-  "resources": "PNTMDraggablePlaceDetails/**/*.xcassets",
+  "resources": [
+    "PNTMDraggablePlaceDetails/**/*.xcassets",
+    "PNTMDraggablePlaceDetails/**/*.lproj/*.strings"
+  ],
   "dependencies": {
     "Kingfisher": [
 
