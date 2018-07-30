@@ -6,6 +6,8 @@
 build/
 DerivedData/
 
+PNTMDraggablePlaceDetailsExample/PNTMDraggablePlaceDetailsExample.xcworkspace/
+
 ## Various settings
 *.pbxuser
 !default.pbxuser
