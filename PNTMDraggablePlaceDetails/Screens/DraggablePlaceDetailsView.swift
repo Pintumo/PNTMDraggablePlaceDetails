@@ -78,9 +78,14 @@ class DraggablePlaceDetailsView: UIView {
 }
 
 
-// MARK: - Public Methods
+// MARK: - Internal Methods
 
 extension DraggablePlaceDetailsView {
+    func reload() {
+        self.tableView.reloadData()
+        self.collectionView.reloadData()
+    }
+    
     func dequeCellForImageIndexPath(_ indexPath: IndexPath) -> ImageCell {
         return self.collectionView
             .dequeueReusableCell(withReuseIdentifier: Constants.DPDImageReuseIdentifier, for: indexPath)

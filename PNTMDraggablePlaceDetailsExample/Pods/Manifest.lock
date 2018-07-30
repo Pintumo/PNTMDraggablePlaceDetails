@@ -1,6 +1,6 @@
 PODS:
   - Kingfisher (4.8.1)
-  - PNTMDraggablePlaceDetails (0.0.1):
+  - PNTMDraggablePlaceDetails (0.0.3):
     - Kingfisher
 
 DEPENDENCIES:
@@ -16,7 +16,7 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   Kingfisher: 868c1149679a7ab6869be118faa9b5aed154aaf0
-  PNTMDraggablePlaceDetails: 66f03edc54f8b60f144cadbfc21315316a5fddea
+  PNTMDraggablePlaceDetails: 670c4a6f787cdf13c2e53aa21adbbf35cd09f27f
 
 PODFILE CHECKSUM: 3c1ceb740c65003f2ba90665fa8eb4eea399b766
 

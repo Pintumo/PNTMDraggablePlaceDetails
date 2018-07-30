@@ -10,11 +10,15 @@ public class DraggablePlaceDetailsViewController: UIViewController {
         super.init(nibName: nil, bundle: nil)
     }
     
+    public func updatedModel(_ model: DraggablePlaceDetailsPlaceModel) {
+        self.dataStore.model = model
+        self.contentView.reload()
+    }
     
     // MARK: - Private
     
     private lazy var contentView = DraggablePlaceDetailsView(delegate: self)
-    private let dataStore: DraggablePlaceDetailsStore
+    private var dataStore: DraggablePlaceDetailsStore
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")

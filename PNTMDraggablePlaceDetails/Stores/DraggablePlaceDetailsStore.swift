@@ -9,7 +9,7 @@ struct DraggablePlaceDetailsStore {
         case website
     }
     
-    let model: DraggablePlaceDetailsPlaceModel
+    var model: DraggablePlaceDetailsPlaceModel
     
     func numbersOfRowsInSection(_ section: Int) -> Int {
         return section == 0 ? cellType.allCases.count : model.reviews?.count ?? 0
