@@ -17,5 +17,5 @@ Pod::Spec.new do |s|
   s.public_header_files = "PNTMDraggablePlaceDetails/**/*.h"
   s.resources           = "PNTMDraggablePlaceDetails/**/*.xcassets", "PNTMDraggablePlaceDetails/**/*.lproj/*.strings"
   # s.frameworks = "SomeFramework", "AnotherFramework"
-  s.dependency "Kingfisher"
+  s.dependency "FlexiblePageControl", "Kingfisher"
 end
