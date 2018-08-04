@@ -2,36 +2,36 @@ import Kingfisher
 import UIKit
 
 public class DraggablePlaceDetailsViewController: UIViewController {
-    
+
     // MARK: - Public
-    
+
     public init(_ model: DraggablePlaceDetailsPlaceModel) {
         self.dataStore = DraggablePlaceDetailsStore(model: model)
         super.init(nibName: nil, bundle: nil)
     }
-    
+
     public func updatedModel(_ model: DraggablePlaceDetailsPlaceModel) {
         self.dataStore.model = model
         self.contentView.reload()
     }
-    
+
     // MARK: - Private
-    
+
     private lazy var contentView = DraggablePlaceDetailsView(delegate: self)
     private var dataStore: DraggablePlaceDetailsStore
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+
     override public func loadView() {
         self.view = contentView
     }
-    
+
     override public func viewDidLoad() {
         super.viewDidLoad()
         self.contentView.cancelButton.addTarget(self, action: #selector(dismissButtonTapped), for: .touchUpInside)
-        
+
         self.contentView.cancelGesture.delegate = self
     }
 }
