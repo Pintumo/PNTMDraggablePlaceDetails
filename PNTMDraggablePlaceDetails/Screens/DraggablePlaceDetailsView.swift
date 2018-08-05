@@ -1,16 +1,29 @@
+import FlexiblePageControl
 import UIKit
 
 class DraggablePlaceDetailsView: UIView {
     
-    var numberOfImages: Int = 1 { didSet { self.pageControl.numberOfPages = numberOfImages }}
+    var secondaryColor = UIColor.white
+    var mainColor = UIColor.blue
+    
+    var cancelIcon: UIImage? {
+        set(newValue) {
+            self.cancelButton.setImage(newValue, for: .normal)
+            self.addSubview(self.cancelButton)
+            self.cancelButton.translatesAutoresizingMaskIntoConstraints = false
+            self.cancelButton.topAnchor.constraint(equalTo: self.collectionView.topAnchor, constant: self.safeAreaInsets.top + 30).isActive = true
+            self.cancelButton.leftAnchor.constraint(equalTo: self.collectionView.leftAnchor, constant: 6).isActive = true
+        }
+        get { return self.cancelButton.imageView?.image }
+    }
     let cancelButton = UIButton(type: .custom)
     let cancelGesture = UIPanGestureRecognizer()
     
     private let collectionView: UICollectionView
-    private let pageControl = UIPageControl()
+    let pageControl = FlexiblePageControl()
     private let tableView = TableView()
     
-    private let maxHeaderHeight: CGFloat = 260.0
+    private let maxHeaderHeight: CGFloat = 220.0
     private let minHeaderHeight: CGFloat = 66.0
     private var headerHeightConstraint: NSLayoutConstraint!
 
@@ -38,30 +51,20 @@ class DraggablePlaceDetailsView: UIView {
         self.collectionView.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
         self.collectionView.rightAnchor.constraint(equalTo: self.rightAnchor).isActive = true
         
-        self.headerHeightConstraint = self.collectionView.heightAnchor.constraint(equalToConstant: maxHeaderHeight)
-        self.headerHeightConstraint.isActive = true
-        
-        self.pageControl.hidesForSinglePage = true
-        self.pageControl.numberOfPages = 1
-        self.pageControl.currentPage = 0
         self.addSubview(self.pageControl)
         self.pageControl.translatesAutoresizingMaskIntoConstraints = false
-        self.pageControl.leftAnchor.constraint(equalTo: self.collectionView.leftAnchor).isActive = true
-        self.pageControl.rightAnchor.constraint(equalTo: self.collectionView.rightAnchor).isActive = true
+        self.pageControl.centerXAnchor.constraint(equalTo: self.collectionView.centerXAnchor).isActive = true
         self.pageControl.bottomAnchor.constraint(equalTo: self.collectionView.bottomAnchor).isActive = true
-        self.pageControl.heightAnchor.constraint(equalToConstant: 40.0).isActive = true
+        self.pageControl.heightAnchor.constraint(equalToConstant: 40).isActive = true
+        self.pageControl.widthAnchor.constraint(equalToConstant: 200).isActive = true
 
-        let cancelButtonImage = Assets.close_arrow.image()?.withRenderingMode(.alwaysTemplate)
-        self.cancelButton.setImage(cancelButtonImage, for: .normal)
-        self.cancelButton.imageView?.tintColor = .white
-        self.addSubview(self.cancelButton)
-        self.cancelButton.translatesAutoresizingMaskIntoConstraints = false
-        self.cancelButton.centerYAnchor.constraint(equalTo: self.pageControl.centerYAnchor).isActive = true
-        self.cancelButton.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 20).isActive = true
+        self.headerHeightConstraint = self.collectionView.heightAnchor.constraint(equalToConstant: maxHeaderHeight)
+        self.headerHeightConstraint.isActive = true
         
         self.collectionView.addGestureRecognizer(self.cancelGesture)
         
         self.tableView.register(ReviewCell.self, forCellReuseIdentifier: Constants.DPDReviewReuseIdentifier)
+        self.tableView.separatorStyle = .none
         self.tableView.delegate = delegate
         self.tableView.dataSource = delegate
         self.addSubview(self.tableView)
@@ -94,6 +97,21 @@ extension DraggablePlaceDetailsView {
     
     func setCurrentPage(_ currentPage: Int) {
         self.pageControl.currentPage = currentPage
+    }
+    
+    func setPageControlWithNumberOfPages(_ numberOfPages: Int){
+        guard numberOfPages > 1 else { return }
+        
+        self.pageControl.numberOfPages = numberOfPages
+        self.pageControl.currentPage = 0
+        self.pageControl.displayCount = 5
+        
+        self.pageControl.dotSize = 9
+        self.pageControl.smallDotSizeRatio = 0.5
+        self.pageControl.mediumDotSizeRatio = 0.7
+
+        self.pageControl.pageIndicatorTintColor = self.secondaryColor
+        pageControl.currentPageIndicatorTintColor = self.mainColor
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {

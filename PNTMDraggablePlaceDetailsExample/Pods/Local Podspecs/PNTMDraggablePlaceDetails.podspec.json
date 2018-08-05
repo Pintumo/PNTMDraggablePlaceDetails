@@ -27,6 +27,9 @@
     "PNTMDraggablePlaceDetails/**/*.lproj/*.strings"
   ],
   "dependencies": {
+    "FlexiblePageControl": [
+
+    ],
     "Kingfisher": [
 
     ]

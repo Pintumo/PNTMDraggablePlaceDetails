@@ -2,8 +2,8 @@ import UIKit
 
 class RatingView: UIView {
 
-    static private let starWidth: CGFloat = 12
-    static private let starSpace: CGFloat = 2
+    static let starWidth: CGFloat = 12
+    static let starSpace: CGFloat = 2
     static let width = 5*starWidth + 4*starSpace
     private let rating: CGFloat
     

@@ -3,10 +3,51 @@ import UIKit
 
 public class DraggablePlaceDetailsViewController: UIViewController {
 
-    // MARK: - Public
+    // MARK: - Public Style
+    
+    public var mainColor: UIColor = UIColor.blue
+    public var secondaryColor: UIColor = UIColor.white
+    public var textColor = UIColor(white: 0.4, alpha: 1.0)
+    public var lightTextColor = UIColor(white: 0.2, alpha: 1.0)
+    
+    public var routeButtonImage: UIImage? {
+        set(newValue) { self.dataStore.routeButtonImage = newValue }
+        get { return self.dataStore.routeButtonImage}
+    }
+    
+    public var shareButtonImage: UIImage? {
+        set(newValue) { self.dataStore.shareButtonImage = newValue }
+        get { return self.dataStore.shareButtonImage}
+    }
 
+    public var addressLabelImage: UIImage? {
+        set(newValue) { self.dataStore.addressLabelImage = newValue }
+        get { return self.dataStore.addressLabelImage}
+    }
+    
+    public var openingHoursLabelImage: UIImage? {
+        set(newValue) { self.dataStore.openingHoursLabelImage = newValue }
+        get { return self.dataStore.openingHoursLabelImage}
+    }
+    
+    public var phoneLabelImage: UIImage? {
+        set(newValue) { self.dataStore.phoneLabelImage = newValue }
+        get { return self.dataStore.phoneLabelImage}
+    }
+    
+    public var websiteLabelImage: UIImage? {
+        set(newValue) { self.dataStore.websiteLabelImage = newValue }
+        get { return self.dataStore.websiteLabelImage}
+    }
+
+    public var dismissIcon: UIImage?
+    
     public init(_ model: DraggablePlaceDetailsPlaceModel) {
         self.dataStore = DraggablePlaceDetailsStore(model: model)
+        self.dataStore.mainColor = mainColor
+        self.dataStore.secondaryColor = secondaryColor
+        self.dataStore.textColor = textColor
+        self.dataStore.lightTextColor = lightTextColor
         super.init(nibName: nil, bundle: nil)
     }
 
@@ -25,6 +66,9 @@ public class DraggablePlaceDetailsViewController: UIViewController {
     }
 
     override public func loadView() {
+        contentView.mainColor = self.mainColor
+        contentView.secondaryColor = self.secondaryColor
+        contentView.cancelIcon = self.dismissIcon
         self.view = contentView
     }
 
@@ -43,7 +87,7 @@ extension DraggablePlaceDetailsViewController: UICollectionViewDelegate, UIColle
     }
     
     public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        self.contentView.numberOfImages = self.dataStore.numberOfPhotos()
+        self.contentView.setPageControlWithNumberOfPages(self.dataStore.numberOfPhotos())
         return self.dataStore.numberOfPhotos()
     }
     
@@ -67,10 +111,15 @@ extension DraggablePlaceDetailsViewController: UITableViewDataSource, UITableVie
         return 2
     }
     
+    public func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return section == 0 ? 0 : 40
+    }
+    
     public func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
         guard let header = view as? UITableViewHeaderFooterView else { return }
-        header.contentView.backgroundColor = .white
-        header.textLabel?.textColor = Constants.mainColor
+        header.contentView.backgroundColor = self.secondaryColor
+        header.textLabel?.textColor = self.textColor
+        header.textLabel?.font = UIFont.systemFont(ofSize: 18, weight: .light)
     }
     
     public func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
@@ -86,7 +135,11 @@ extension DraggablePlaceDetailsViewController: UITableViewDataSource, UITableVie
     }
     
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return self.dataStore.tableView(tableView, cellForRowAt:indexPath, target: self, shareAction:  #selector(sharePlacesURL), routeAction: #selector(routeToLocation))
+        return self.dataStore.tableView(tableView,
+                                        cellForRowAt:indexPath,
+                                        target: self,
+                                        shareAction: #selector(sharePlacesURL),
+                                        routeAction: #selector(routeToLocation))
     }
     
     public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

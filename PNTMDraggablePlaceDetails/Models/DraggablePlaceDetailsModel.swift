@@ -8,6 +8,7 @@ public struct DraggablePlaceDetailsPlaceModel {
     let address: String?
     let location: CLLocationCoordinate2D?
     let rating: Float?
+    let price_level: Int?
     let phone: String?
     let website: String?
     let photos: [String]?
@@ -21,6 +22,7 @@ public struct DraggablePlaceDetailsPlaceModel {
                 address: String? = nil,
                 location: CLLocationCoordinate2D? = nil,
                 rating: Float? = nil,
+                price_level: Int? = nil,
                 phone: String? = nil,
                 website: String? = nil,
                 photos: [String]? = nil,
@@ -33,6 +35,7 @@ public struct DraggablePlaceDetailsPlaceModel {
         self.address = address
         self.location = location
         self.rating = rating
+        self.price_level = price_level
         self.phone = phone
         self.website = website
         self.photos = photos

@@ -5,11 +5,29 @@ struct DraggablePlaceDetailsStore {
     enum cellType: Int, CaseIterable {
         case header
         case address
+        //case openingHours
         case phone
         case website
     }
     
+    var mainColor = UIColor.blue
+    var secondaryColor = UIColor.white
+    var textColor = UIColor(white: 0.4, alpha: 1.0)
+    var lightTextColor = UIColor(white: 0.2, alpha: 1.0)
+    
+    var routeButtonImage: UIImage?
+    var shareButtonImage: UIImage?
+    var addressLabelImage: UIImage? = nil
+    var openingHoursLabelImage: UIImage? = nil
+    var phoneLabelImage: UIImage? = nil
+    var websiteLabelImage: UIImage? = nil
+    
     var model: DraggablePlaceDetailsPlaceModel
+    
+    init(model: DraggablePlaceDetailsPlaceModel) {
+        self.model = model
+    }
+    
     
     func numbersOfRowsInSection(_ section: Int) -> Int {
         return section == 0 ? cellType.allCases.count : model.reviews?.count ?? 0
@@ -21,14 +39,14 @@ struct DraggablePlaceDetailsStore {
     
     func heightAtIndexPath(_ indexPath: IndexPath) -> CGFloat {
         if indexPath.section == 0 && indexPath.row == 0 {
-            return 150
+            return 181
         }
         else if indexPath.section == 0 {
             return 74
         }
         else {
             guard let reviews = self.model.reviews, let text = reviews[indexPath.row].text else { return 0.0 }
-            return text.height(withWidth: UIScreen.main.bounds.width - Constants.cellInset * 2, font: UIFont.systemFont(ofSize: 14)) + 60
+            return text.height(withWidth: UIScreen.main.bounds.width - Constants.cellInset * 2, font: UIFont.systemFont(ofSize: 12, weight: .light)) + 60
         }
     }
     
@@ -37,16 +55,25 @@ struct DraggablePlaceDetailsStore {
         return URL(string: url)
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath, target: UIViewController, shareAction: Selector, routeAction: Selector) -> UITableViewCell {
+    func tableView(_ tableView: UITableView,
+                   cellForRowAt indexPath: IndexPath,
+                   target: UIViewController,
+                   shareAction: Selector,
+                   routeAction: Selector) -> UITableViewCell {
         if indexPath.section == 0, let type = cellType(rawValue: indexPath.row) {
-            let cell = cellForType(type, target: target, shareAction: shareAction, routeAction: routeAction)
+            let cell = cellForType(type,
+                                   target: target,
+                                   shareAction: shareAction,
+                                   routeAction: routeAction)
             return cell
         } else {
             let cell = self.tableView(tableView, dequeCellForReviewAt: indexPath)
             guard let reviews = self.model.reviews else { return UITableViewCell() }
             let review = reviews[indexPath.row]
-            cell.name = review.author ?? "-"
-            cell.review = review.text ?? "-"
+            cell.nameLabel.textColor = self.textColor
+            cell.nameLabel.text = review.author
+            cell.reviewLabel.textColor = self.lightTextColor
+            cell.reviewLabel.text = review.text
             if let rating = review.rating { cell.rating = Float(rating) }
             return cell
         }
@@ -68,28 +95,39 @@ struct DraggablePlaceDetailsStore {
             as! ReviewCell
     }
     
-    func cellForType(_ type: cellType, target: UIViewController, shareAction: Selector, routeAction: Selector) -> UITableViewCell {
+    func cellForType(_ type: cellType,
+                     target: UIViewController,
+                     shareAction: Selector,
+                     routeAction: Selector) -> UITableViewCell {
         if type == .header {
             return headerCell(target: target, shareAction: shareAction, routeAction: routeAction)
         } else {
-            return contactCellForType(type)
+            return contactCellForType(type, mainColor: mainColor)
         }
     }
 
-    func headerCell(target: UIViewController, shareAction: Selector, routeAction: Selector) -> UITableViewCell {
-        let cell = HeaderCell()
+    func headerCell(target: UIViewController,
+                    shareAction: Selector,
+                    routeAction: Selector) -> UITableViewCell {
+        let cell = HeaderCell(mainColor: mainColor)
+        cell.shareButton.setImage(self.shareButtonImage, for: .normal)
         cell.shareButton.addTarget(target, action: shareAction, for: .touchUpInside)
+        cell.routeButton.setImage(self.routeButtonImage, for: .normal)
         cell.routeButton.addTarget(target, action: routeAction, for: .touchUpInside)
         cell.name = self.titleForType(.header)
         cell.tags = model.localizedTags
         cell.isOpen = model.open_now
         cell.rating = model.rating
+        cell.priceLevel = model.price_level
         return cell
     }
     
-    func contactCellForType(_ type: cellType) -> UITableViewCell {
+    func contactCellForType(_ type: cellType, mainColor: UIColor) -> UITableViewCell {
         let contactIndex = type.rawValue - 1
-        guard let cell = ContactCell(index: contactIndex, text: self.titleForType(type)) else { return UITableViewCell() }
+        guard let cell = ContactCell(index: contactIndex,
+                                     text: self.titleForType(type),
+                                     image: self.iconForType(type),
+                                     mainColor: self.mainColor) else { return UITableViewCell() }
         return cell
     }
     
@@ -99,6 +137,15 @@ struct DraggablePlaceDetailsStore {
         case .address: return model.address
         case .phone: return model.phone
         case .website: return model.website
+        }
+    }
+    
+    func iconForType(_ type: cellType) -> UIImage? {
+        switch type {
+        case .header: return nil
+        case .address: return self.addressLabelImage
+        case .phone: return self.phoneLabelImage
+        case .website: return self.websiteLabelImage
         }
     }
 }

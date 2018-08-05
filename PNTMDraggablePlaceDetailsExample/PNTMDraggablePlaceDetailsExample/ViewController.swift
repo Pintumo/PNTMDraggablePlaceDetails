@@ -41,6 +41,7 @@ extension ViewController {
     @objc func didTapButtonForDetails() {
         let model = ViewController.createModelWithReviews(false)
         let vc = DraggablePlaceDetailsViewController(model)
+        vc.dismissIcon = UIImage(named: "icon_dismiss")
         self.present(vc, animated: true, completion: nil)
 
         DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
@@ -60,6 +61,7 @@ extension ViewController {
             address: "Some Address in some City in some Country",
             location: CLLocationCoordinate2D(latitude: 52.0, longitude: 13.0),
             rating: 4.2,
+            price_level: 3,
             phone: "+XX XXX XXXXXXXXXX",
             website: "http://pintumo.com",
             photos:  withReviews ? ["https://bit.ly/2A8OopF", "https://bit.ly/2NLa8Kq", "https://bit.ly/2LJnvKx", "https://bit.ly/2A8OopF", "https://bit.ly/2NLa8Kq", "https://bit.ly/2LJnvKx", "https://bit.ly/2A8OopF"] : ["https://bit.ly/2A8OopF"],

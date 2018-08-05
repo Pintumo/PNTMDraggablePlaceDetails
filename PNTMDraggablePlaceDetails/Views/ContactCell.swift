@@ -1,29 +1,30 @@
 import UIKit
 
 class ContactCell: UITableViewCell {
-    enum type: String, CaseIterable  {
-        case address, phone, website
-        
-        func icon() -> UIImage? {
-            let bundle = Bundle(for: DraggablePlaceDetailsViewController.self)
-            return UIImage(named: self.rawValue, in: bundle, compatibleWith: nil)
-        }
-    }
-    
-    init?(index: Int, text: String?) {
-        guard index < ContactCell.type.allCases.count else { return nil }
-        let type = ContactCell.type.allCases[index]
-        
+    init?(index: Int, text: String?, image: UIImage?, mainColor: UIColor) {
         super.init(style: .default, reuseIdentifier: nil)
-        super.imageView?.image = type.icon()
+        super.imageView?.tintColor = mainColor
+        super.imageView?.image = image?.withRenderingMode(.alwaysTemplate)
         super.textLabel?.numberOfLines = 0
-        super.textLabel?.textColor = Constants.mainColor
-        super.textLabel?.font = UIFont.systemFont(ofSize: 14)
         super.textLabel?.text = text
+        super.textLabel?.font = UIFont.systemFont(ofSize: 14)
+        super.textLabel?.textColor = UIColor(white: 0.4, alpha: 1.0)
+        
+        let buttonLine = UIView()
+        buttonLine.backgroundColor = #colorLiteral(red: 0.9019607843, green: 0.9019607843, blue: 0.9019607843, alpha: 1)
+        self.addSubview(buttonLine)
+        buttonLine.translatesAutoresizingMaskIntoConstraints = false
+        buttonLine.heightAnchor.constraint(equalToConstant: 1).isActive = true
+        buttonLine.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
+        buttonLine.leftAnchor.constraint(equalTo: self.leftAnchor,constant: Constants.cellInset).isActive = true
+        buttonLine.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -Constants.cellInset).isActive = true
+        
+        guard let text = text, let url = URL(string: text), UIApplication.shared.canOpenURL(url) else { return }
+        
+        super.textLabel?.textColor = mainColor
     }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
-        
     }
 }
