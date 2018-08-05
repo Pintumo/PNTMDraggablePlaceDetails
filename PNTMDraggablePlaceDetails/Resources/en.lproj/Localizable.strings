@@ -3,6 +3,9 @@
 "open" = "Open";
 "closed" = "Closed";
 
+"opensAt" = "Opens at";
+"closesAt" = "Closes at";
+
 "shareLocation" = "Share Location";
 "routeWith" = "Route with...";
 

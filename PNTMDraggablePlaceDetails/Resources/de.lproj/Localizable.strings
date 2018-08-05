@@ -3,6 +3,9 @@
 "open" = "Geöffnet";
 "closed" = "Geschlossen";
 
+"opensAt" = "Öffnet um";
+"closesAt" = "Schliesst um";
+
 "shareLocation" = "Treffpunkt teilen";
 "routeWith" = "Navigation...";
 

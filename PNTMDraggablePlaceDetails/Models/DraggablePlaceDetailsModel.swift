@@ -13,6 +13,7 @@ public struct DraggablePlaceDetailsPlaceModel {
     let website: String?
     let photos: [String]?
     let open_now: Bool?
+    let open_periods: [DraggablePlaceDetailsOpenHoursModel]?
     let reviews: [DraggablePlaceDetailsReviewModel]?
     
     public init(googlePlaceId: String? = nil,
@@ -27,6 +28,7 @@ public struct DraggablePlaceDetailsPlaceModel {
                 website: String? = nil,
                 photos: [String]? = nil,
                 open_now: Bool? = nil,
+                open_periods: [DraggablePlaceDetailsOpenHoursModel]? = nil,
                 reviews: [DraggablePlaceDetailsReviewModel]? = nil) {
         self.googlePlaceId = googlePlaceId
         self.name = name
@@ -40,6 +42,7 @@ public struct DraggablePlaceDetailsPlaceModel {
         self.website = website
         self.photos = photos
         self.open_now = open_now
+        self.open_periods = open_periods
         self.reviews = reviews
     }
     
@@ -82,5 +85,15 @@ public struct DraggablePlaceDetailsReviewModel {
         self.rating = rating
         self.text = text
         self.relative_time_description = relative_time_description
+    }
+}
+
+public struct DraggablePlaceDetailsOpenHoursModel {
+    let openHours: DateComponents?
+    let closeHours: DateComponents?
+
+    public init(openHours: DateComponents?, closeHours: DateComponents?) {
+        self.openHours = openHours
+        self.closeHours = closeHours
     }
 }

@@ -7,8 +7,11 @@ enum Localizable: String {
     case shareLocation
     case routeWith
     
-        case open
-        case closed
+    case open
+    case closed
+    
+    case opensAt
+    case closesAt
 
     case reviews
     
