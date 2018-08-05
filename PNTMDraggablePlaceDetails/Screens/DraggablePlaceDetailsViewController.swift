@@ -5,10 +5,26 @@ public class DraggablePlaceDetailsViewController: UIViewController {
 
     // MARK: - Public Style
     
-    public var mainColor: UIColor = UIColor.blue
-    public var secondaryColor: UIColor = UIColor.white
-    public var textColor = UIColor(white: 0.4, alpha: 1.0)
-    public var lightTextColor = UIColor(white: 0.2, alpha: 1.0)
+    public var mainColor: UIColor = UIColor.blue {
+        didSet {
+            self.dataStore.mainColor = mainColor
+        }
+    }
+    public var secondaryColor: UIColor = UIColor.white {
+        didSet {
+            self.dataStore.secondaryColor = secondaryColor
+        }
+    }
+    public var textColor = UIColor(white: 0.4, alpha: 1.0) {
+        didSet {
+            self.dataStore.textColor = textColor
+        }
+    }
+    public var lightTextColor = UIColor(white: 0.2, alpha: 1.0) {
+        didSet {
+            self.dataStore.lightTextColor = lightTextColor
+        }
+    }
     
     public var routeButtonImage: UIImage? {
         set(newValue) { self.dataStore.routeButtonImage = newValue }
@@ -44,10 +60,6 @@ public class DraggablePlaceDetailsViewController: UIViewController {
     
     public init(_ model: DraggablePlaceDetailsPlaceModel) {
         self.dataStore = DraggablePlaceDetailsStore(model: model)
-        self.dataStore.mainColor = mainColor
-        self.dataStore.secondaryColor = secondaryColor
-        self.dataStore.textColor = textColor
-        self.dataStore.lightTextColor = lightTextColor
         super.init(nibName: nil, bundle: nil)
     }
 
