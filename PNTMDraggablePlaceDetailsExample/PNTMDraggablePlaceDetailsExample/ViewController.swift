@@ -3,13 +3,20 @@ import MapKit
 
 class ViewController: UIViewController {
     
-    static var day0 = DraggablePlaceDetailsOpenHoursModel(openHours: DateComponents(day: 0, hour: 8, minute: 0), closeHours: DateComponents(day: 1, hour: 1, minute: 00))
-    static var day1 = DraggablePlaceDetailsOpenHoursModel(openHours: DateComponents(day: 1, hour: 1, minute: 00), closeHours: DateComponents(day: 2, hour: 1, minute: 00))
-    static var day2 = DraggablePlaceDetailsOpenHoursModel(openHours: DateComponents(day: 2, hour: 8, minute: 30), closeHours: DateComponents(day: 3, hour: 1, minute: 00))
-    static var day3 = DraggablePlaceDetailsOpenHoursModel(openHours: DateComponents(day: 3, hour: 8, minute: 30), closeHours: DateComponents(day: 4, hour: 1, minute: 00))
-    static var day4 = DraggablePlaceDetailsOpenHoursModel(openHours: DateComponents(day: 4, hour: 8, minute: 30), closeHours: DateComponents(day: 5, hour: 1, minute: 00))
-    static var day5 = DraggablePlaceDetailsOpenHoursModel(openHours: DateComponents(day: 5, hour: 8, minute: 30), closeHours: DateComponents(day: 6, hour: 1, minute: 00))
-    static var day6 = DraggablePlaceDetailsOpenHoursModel(openHours: DateComponents(day: 6, hour: 0, minute: 30), closeHours: DateComponents(day: 0, hour: 1, minute: 00))
+    static var day0 = DraggablePlaceDetailsOpenHoursModel(openHours: DateComponents(day: 0, hour: 8, minute: 0),
+                                                          closeHours: DateComponents(day: 1, hour: 1, minute: 00))
+    static var day1 = DraggablePlaceDetailsOpenHoursModel(openHours: DateComponents(day: 1, hour: 8, minute: 00),
+                                                          closeHours: DateComponents(day: 2, hour: 1, minute: 00))
+    static var day2 = DraggablePlaceDetailsOpenHoursModel(openHours: DateComponents(day: 2, hour: 8, minute: 30),
+                                                          closeHours: DateComponents(day: 3, hour: 1, minute: 00))
+    static var day3 = DraggablePlaceDetailsOpenHoursModel(openHours: DateComponents(day: 3, hour: 8, minute: 30),
+                                                          closeHours: DateComponents(day: 4, hour: 1, minute: 00))
+    static var day4 = DraggablePlaceDetailsOpenHoursModel(openHours: DateComponents(day: 4, hour: 8, minute: 30),
+                                                          closeHours: DateComponents(day: 5, hour: 1, minute: 00))
+    static var day5 = DraggablePlaceDetailsOpenHoursModel(openHours: DateComponents(day: 5, hour: 8, minute: 30),
+                                                          closeHours: DateComponents(day: 6, hour: 1, minute: 00))
+    static var day6 = DraggablePlaceDetailsOpenHoursModel(openHours: DateComponents(day: 6, hour: 8, minute: 30),
+                                                          closeHours: DateComponents(day: 6, hour: 19, minute: 00))
     
     static var review1 = DraggablePlaceDetailsReviewModel(
         author: "Some Author",
