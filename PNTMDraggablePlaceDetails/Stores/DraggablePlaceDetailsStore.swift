@@ -105,7 +105,7 @@ struct DraggablePlaceDetailsStore {
             return contactCellForType(type, mainColor: mainColor)
         }
     }
-
+    
     func headerCell(target: UIViewController,
                     shareAction: Selector,
                     routeAction: Selector) -> UITableViewCell {
@@ -135,7 +135,7 @@ struct DraggablePlaceDetailsStore {
         switch type {
         case .header: return model.name
         case .address: return model.address
-        case .openingHours: return openingHoursTitle()
+        case .openingHours: return openingHoursTitle() ?? "---"
         case .phone: return model.phone
         case .website: return model.website
         }
@@ -151,55 +151,56 @@ struct DraggablePlaceDetailsStore {
         }
     }
     
-    func openingHoursTitle() -> String {
+    func openingHoursTitle() -> String? {
+        let closesAt = closesAtPeriod()
+        let opensAt = opensAtPeriod(closingAt: closesAt)
+        return titleFrom(openPeriod: opensAt, closePeriod: closesAt)
+    }
+    
+    func closesAtPeriod() -> DraggablePlaceDetailsOpenHoursModel? {
         let date = Date()
-        let components = Calendar.current.dateComponents([.day, .hour, .minute], from: date)
-        return model.open_periods?
-            .filter { period in
-                guard
-                    let o = period.openHours, let c = period.closeHours,
-                    o.day == components.day || c.day == components.day else {
+        let components = Calendar.current.dateComponents([.weekday, .hour, .minute], from: date)
+        let today = components.weekday! - 1
+        let currentHour = components.hour!
+        return self.model.open_periods?.filter { period in
+            guard let o = period.openHours, let oHour = o.hour, let c = period.closeHours, let cHour = c.hour,
+                (o.day == today && currentHour > oHour && (c.day != today || (c.day == today && currentHour < cHour)))
+                    || (o.day != today && c.day == today && currentHour < cHour) else {
                         return false
-                }
-                
-                guard
-                    let openHour = o.hour, let closeHours = c.hour,
-                    let currentHour = components.hour,
-                    currentHour > openHour || currentHour < closeHours else {
+            }
+            return true
+            }.first
+    }
+    
+    func opensAtPeriod(closingAt: DraggablePlaceDetailsOpenHoursModel?) -> DraggablePlaceDetailsOpenHoursModel? {
+        let date = Date()
+        let components = Calendar.current.dateComponents([.weekday, .hour, .minute], from: date)
+        let today = components.weekday! - 1
+        let currentHour = components.hour!
+        return model.open_periods?.filter { period in
+            guard let o = period.openHours, let oHour = o.hour,
+                o.day == today && currentHour < oHour
+                    || o.day == (today + 1)%7 && closingAt == nil else {
                         return false
-                }
-
-                return true
-            }.map { period in
-                guard
-                    let o = period.openHours, let c = period.closeHours,
-                    let openDay = o.day, let closeDay = c.day,
-                    let openHour = o.hour, let closeHour = c.hour,
-                    let currentHour = components.hour else {
-                        return "-"
-                }
-                
-                let calendar = Calendar(identifier: .gregorian)
-                let dateFormatter = DateFormatter()
-                dateFormatter.timeStyle = .short
-                
-                if openDay == components.day && openHour < currentHour
-                || closeDay == components.day && closeHour > currentHour,
-                let date = calendar.date(from: c)
-                {
-                    let time = dateFormatter.string(from: date)
-                    return "\(Localizable.closesAt.loc()) \(time)"
-                }
-                
-                if openDay == components.day && openHour > currentHour
-                || closeDay == components.day && closeHour < currentHour,
-                let date = calendar.date(from: o)
-                {
-                    let time = dateFormatter.string(from: date)
-                    return "\(Localizable.opensAt.loc()) \(time)"
-                }
-                
-                return "-"
-        }.first ?? "-"
+            }
+            return true
+            }.first
+    }
+    
+    func titleFrom(openPeriod: DraggablePlaceDetailsOpenHoursModel?,
+                   closePeriod: DraggablePlaceDetailsOpenHoursModel?) -> String {
+        let calendar = Calendar(identifier: .gregorian)
+        let dateFormatter = DateFormatter()
+        dateFormatter.timeStyle = .short
+        
+        if let closesAt = closePeriod,  let date = calendar.date(from: closesAt.closeHours!) {
+            let time = dateFormatter.string(from: date)
+            return "\(Localizable.closesAt.loc()) \(time)"
+        } else if let opensAt = openPeriod, let date = calendar.date(from: opensAt.openHours!) {
+            let time = dateFormatter.string(from: date)
+            return "\(Localizable.opensAt.loc()) \(time)"
+        }  else {
+            return "---"
+        }
     }
 }
