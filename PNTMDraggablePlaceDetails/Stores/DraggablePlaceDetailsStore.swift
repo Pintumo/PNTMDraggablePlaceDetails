@@ -9,7 +9,7 @@ struct DraggablePlaceDetailsStore {
         case phone
         case website
     }
-    
+
     var mainColor = UIColor.blue
     var secondaryColor = UIColor.white
     var textColor = UIColor(white: 0.4, alpha: 1.0)
@@ -127,7 +127,8 @@ struct DraggablePlaceDetailsStore {
         guard let cell = ContactCell(index: contactIndex,
                                      text: self.titleForType(type),
                                      image: self.iconForType(type),
-                                     mainColor: self.mainColor) else { return UITableViewCell() }
+                                     mainColor: self.mainColor,
+                                     font: Constants.contactCellFont) else { return UITableViewCell() }
         return cell
     }
     

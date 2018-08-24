@@ -22,7 +22,7 @@ class HeaderCell: UITableViewCell {
         
         let buttonHeigth: CGFloat = 40
         
-        self.nameLabel.font = UIFont.systemFont(ofSize: 24, weight: .light)
+        self.nameLabel.font = Constants.headerFont
         self.nameLabel.textColor = mainColor
         self.nameLabel.numberOfLines = 1
         self.addSubview(self.nameLabel)
@@ -31,14 +31,14 @@ class HeaderCell: UITableViewCell {
         self.nameLabel.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -Constants.cellInset).isActive = true
         self.nameLabel.leftAnchor.constraint(equalTo: self.leftAnchor, constant: Constants.cellInset).isActive = true
         
-        self.tagsLabel.font = UIFont.systemFont(ofSize: 12, weight: .light)
+        self.tagsLabel.font = Constants.subLabelFont
         self.tagsLabel.textColor = Constants.mainColor
         self.addSubview(self.tagsLabel)
         self.tagsLabel.translatesAutoresizingMaskIntoConstraints = false
         self.tagsLabel.topAnchor.constraint(equalTo: self.nameLabel.bottomAnchor, constant: 10).isActive = true
         self.tagsLabel.leftAnchor.constraint(equalTo: self.nameLabel.leftAnchor).isActive = true
         
-        self.isOpenLabel.font = UIFont.systemFont(ofSize: 12, weight: .light)
+        self.isOpenLabel.font = Constants.subLabelFont
         self.isOpenLabel.textColor = Constants.mainColor
         self.addSubview(self.isOpenLabel)
         self.isOpenLabel.translatesAutoresizingMaskIntoConstraints = false

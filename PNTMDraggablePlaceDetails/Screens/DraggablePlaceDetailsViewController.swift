@@ -4,7 +4,7 @@ import UIKit
 public class DraggablePlaceDetailsViewController: UIViewController {
 
     // MARK: - Public Style
-    
+
     public var mainColor: UIColor = UIColor.blue {
         didSet {
             self.dataStore.mainColor = mainColor
@@ -131,7 +131,7 @@ extension DraggablePlaceDetailsViewController: UITableViewDataSource, UITableVie
         guard let header = view as? UITableViewHeaderFooterView else { return }
         header.contentView.backgroundColor = self.secondaryColor
         header.textLabel?.textColor = self.textColor
-        header.textLabel?.font = UIFont.systemFont(ofSize: 18, weight: .light)
+        header.textLabel?.font = Constants.reviewHeaderFont
     }
     
     public func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {

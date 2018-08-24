@@ -11,7 +11,7 @@ class ReviewCell: UITableViewCell {
         self.selectionStyle = .none
 
         self.nameLabel.numberOfLines = 1
-        self.nameLabel.font = UIFont.systemFont(ofSize: 14, weight: .light)
+        self.nameLabel.font = Constants.reviewerNameLabel
         self.addSubview(self.nameLabel)
         let leftOffset = Constants.cellInset + 5 * RatingView.starWidth + 4 * RatingView.starSpace + 5
         self.nameLabel.translatesAutoresizingMaskIntoConstraints = false
@@ -20,7 +20,7 @@ class ReviewCell: UITableViewCell {
         self.nameLabel.leftAnchor.constraint(equalTo: self.leftAnchor, constant: leftOffset).isActive = true
 
         self.reviewLabel.numberOfLines = 0
-        self.reviewLabel.font = UIFont.systemFont(ofSize: 12, weight: .light)
+        self.reviewLabel.font = Constants.subLabelFont
         self.reviewLabel.lineBreakMode = .byTruncatingTail
         self.addSubview(self.reviewLabel)
         self.reviewLabel.translatesAutoresizingMaskIntoConstraints = false
