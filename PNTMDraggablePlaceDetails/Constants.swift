@@ -6,7 +6,8 @@ public struct Constants {
     public static var buttonBackgroundColor = #colorLiteral(red: 0.9019607843, green: 0.9019607843, blue: 0.9019607843, alpha: 1)
     
     public static var sharePlaceIcon: UIImage?
-    public static var sharePlaceMessage: String?
+    public static var sharePlaceMessageHeader: String?
+    public static var sharePlaceMessageFooter: String?
     
     public static var cellInset: CGFloat = 15.0
     

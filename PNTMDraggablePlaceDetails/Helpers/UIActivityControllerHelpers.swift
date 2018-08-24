@@ -3,7 +3,8 @@ import UIKit
 extension UIActivityViewController {
     static func sharePlacesURL(_ url: URL, presenter: UIViewController) {
         var activities: [Any] = Constants.sharePlaceIcon == nil ? [] : [Constants.sharePlaceIcon!]
-        let text = Constants.sharePlaceMessage == nil ? "\(url)" : "\(Constants.sharePlaceMessage!) \(url)"
+        var text = Constants.sharePlaceMessageHeader == nil ? "\(url)" : "\(Constants.sharePlaceMessageHeader!)\n\n \(url)"
+        text = Constants.sharePlaceMessageFooter == nil ? text : "\(text)\n\n \(Constants.sharePlaceMessageFooter!)"
         activities.append(text)
         
         let avc = UIActivityViewController(activityItems: activities, applicationActivities: nil)
