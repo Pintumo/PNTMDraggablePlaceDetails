@@ -104,7 +104,7 @@ extension DraggablePlaceDetailsView {
         
         self.pageControl.numberOfPages = numberOfPages
         self.pageControl.currentPage = 0
-        self.pageControl.displayCount = 5
+        self.pageControl.displayCount = 4
         
         self.pageControl.dotSize = 9
         self.pageControl.smallDotSizeRatio = 0.5
