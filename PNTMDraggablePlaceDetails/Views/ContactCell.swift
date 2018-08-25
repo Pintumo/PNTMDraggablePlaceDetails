@@ -3,8 +3,7 @@ import UIKit
 class ContactCell: UITableViewCell {
     init?(index: Int, text: String?, image: UIImage?, mainColor: UIColor, font: UIFont) {
         super.init(style: .default, reuseIdentifier: nil)
-        super.imageView?.tintColor = mainColor
-        super.imageView?.image = image?.withRenderingMode(.alwaysTemplate)
+        super.imageView?.image = image
         super.textLabel?.numberOfLines = 0
         super.textLabel?.text = text
         super.textLabel?.font = font

@@ -5,6 +5,8 @@ public class DraggablePlaceDetailsViewController: UIViewController {
 
     // MARK: - Public Style
 
+    public var placeHolderImage: UIImage?
+    
     public var mainColor: UIColor = UIColor.blue {
         didSet {
             self.dataStore.mainColor = mainColor
@@ -105,9 +107,12 @@ extension DraggablePlaceDetailsViewController: UICollectionViewDelegate, UIColle
     
     public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell =  self.contentView.dequeCellForImageIndexPath(indexPath)
-        guard let url = self.dataStore.photoAtIndexPath(indexPath) else { return UICollectionViewCell() }
+        if indexPath.row == 0, let image = self.placeHolderImage {
+            cell.imageView.image = image
+        } else if let url = self.dataStore.photoAtIndexPath(indexPath) {
+            cell.imageView.kf.setImage(with: url)
+        }
         
-        cell.imageView.kf.setImage(with: url)
         return cell
     }
     

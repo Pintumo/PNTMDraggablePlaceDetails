@@ -34,7 +34,7 @@ struct DraggablePlaceDetailsStore {
     }
     
     func numberOfPhotos() -> Int {
-        return model.photos?.count ?? 0
+        return model.photos?.count ?? 1
     }
     
     func heightAtIndexPath(_ indexPath: IndexPath) -> CGFloat {
