@@ -4,7 +4,7 @@
 Pod::Spec.new do |s|
   s.name               = "PNTMDraggablePlaceDetails"
   s.swift_version      = "4.2"
-  s.version            = "0.2.0"
+  s.version            = "0.2.1"
   s.summary            = "Simple Library to display details of POIs."
   s.description        = "Simple Library to display details of POIs in a draggable modally presented UIViewController."
   s.homepage           = "https://github.com/Pintumo/PNTMDraggablePlaceDetails"
