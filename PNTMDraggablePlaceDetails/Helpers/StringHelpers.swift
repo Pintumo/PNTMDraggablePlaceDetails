@@ -1,11 +1,19 @@
 import UIKit
 
 extension String {
-    func height(withWidth width: CGFloat, font: UIFont) -> CGFloat {
+    
+    func height(withWidth width: CGFloat, font: UIFont, spacing: CGFloat) -> CGFloat {
         let maxSize = CGSize(width: width, height: CGFloat.greatestFiniteMagnitude)
-        let actualSize = self.boundingRect(with: maxSize, options: [.usesLineFragmentOrigin], attributes: [.font : font], context: nil)
+        
+        let style = NSMutableParagraphStyle()
+        style.lineSpacing = spacing
+        let actualSize = self.boundingRect(with: maxSize,
+                                           options: [.usesLineFragmentOrigin],
+                                           attributes: [.font : font, .paragraphStyle: style],
+                                           context: nil)
         return actualSize.height
     }
+    
     
     func removeWhiteSpaces() -> String {
         return components(separatedBy: .whitespaces).joined()

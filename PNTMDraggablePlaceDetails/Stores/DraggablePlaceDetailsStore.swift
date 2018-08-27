@@ -22,6 +22,8 @@ struct DraggablePlaceDetailsStore {
     var phoneLabelImage: UIImage? = nil
     var websiteLabelImage: UIImage? = nil
     
+    var lineSpacing: CGFloat = 6
+    
     var model: DraggablePlaceDetailsPlaceModel
     
     init(model: DraggablePlaceDetailsPlaceModel) {
@@ -46,7 +48,7 @@ struct DraggablePlaceDetailsStore {
         }
         else {
             guard let reviews = self.model.reviews, let text = reviews[indexPath.row].text else { return 0.0 }
-            return text.height(withWidth: UIScreen.main.bounds.width - Constants.cellInset * 2, font: UIFont.systemFont(ofSize: 12, weight: .light)) + 60
+            return text.height(withWidth: UIScreen.main.bounds.width - Constants.cellInset * 2, font: UIFont.systemFont(ofSize: 12, weight: .light), spacing: lineSpacing) + 60
         }
     }
     
@@ -73,7 +75,7 @@ struct DraggablePlaceDetailsStore {
             cell.nameLabel.textColor = self.textColor
             cell.nameLabel.text = review.author
             cell.reviewLabel.textColor = self.lightTextColor
-            cell.reviewLabel.text = review.text
+            cell.reviewLabel.setText(review.text ?? "", spacing: lineSpacing)
             if let rating = review.rating { cell.rating = Float(rating) }
             return cell
         }
