@@ -85,6 +85,6 @@ extension ViewController {
             photos:  withReviews ? ["https://bit.ly/2A8OopF", "https://bit.ly/2NLa8Kq", "https://bit.ly/2LJnvKx", "https://bit.ly/2A8OopF", "https://bit.ly/2NLa8Kq", "https://bit.ly/2LJnvKx", "https://bit.ly/2A8OopF"] : ["https://bit.ly/2A8OopF"],
             open_now: true,
             open_periods: [day0, day1, day2, day3, day4, day5, day6],
-            reviews: withReviews ? [review1, review2, review3] : nil)
+            reviews: withReviews ? [review1] : nil)
     }
 }

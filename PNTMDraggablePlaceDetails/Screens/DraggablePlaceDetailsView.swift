@@ -107,15 +107,17 @@ extension DraggablePlaceDetailsView {
         self.pageControl.currentPage = 0
         self.pageControl.displayCount = numberOfPages < 5 ? numberOfPages : 5
         
-        self.pageControl.dotSize = 9
-        self.pageControl.smallDotSizeRatio = 0.5
-        self.pageControl.mediumDotSizeRatio = 0.7
+        self.pageControl.dotSize = 6
+        self.pageControl.smallDotSizeRatio = 0.4
+        self.pageControl.mediumDotSizeRatio = 0.8
 
         self.pageControl.pageIndicatorTintColor = self.secondaryColor
         pageControl.currentPageIndicatorTintColor = self.mainColor
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        guard !scrollView.isAtBottom else { return }
+        
         var newHeight = maxHeaderHeight - scrollView.contentOffset.y
         if newHeight < minHeaderHeight {
             newHeight = minHeaderHeight

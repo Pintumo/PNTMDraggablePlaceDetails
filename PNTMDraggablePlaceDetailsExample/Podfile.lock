@@ -1,7 +1,7 @@
 PODS:
   - FlexiblePageControl (1.0.5)
   - Kingfisher (4.8.1)
-  - PNTMDraggablePlaceDetails (0.2.3):
+  - PNTMDraggablePlaceDetails (0.2.4):
     - FlexiblePageControl
     - Kingfisher
 
@@ -20,7 +20,7 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   FlexiblePageControl: 70caa5dad6603a7b361b154fa8b75295a8c44f9b
   Kingfisher: 868c1149679a7ab6869be118faa9b5aed154aaf0
-  PNTMDraggablePlaceDetails: 044b136abe47fdcbebdf9613a3b25a376f956be6
+  PNTMDraggablePlaceDetails: a183875142f95cbffff1fc11363a91a8a83686a9
 
 PODFILE CHECKSUM: 3c1ceb740c65003f2ba90665fa8eb4eea399b766
 

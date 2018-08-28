@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		F1315A80210CA87A0047AA70 /* Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1315A7F210CA87A0047AA70 /* Assets.swift */; };
+		F1732BDF2135F590007D6E5A /* UIScrollViewHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1732BDE2135F590007D6E5A /* UIScrollViewHelpers.swift */; };
 		F1818220210E5DB80065715B /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F1818222210E5DB80065715B /* Localizable.strings */; };
 		F1818225210E5E060065715B /* Localizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1818224210E5E060065715B /* Localizable.swift */; };
 		F1E49707210B2F260020132B /* PNTMDraggablePlaceDetails.h in Headers */ = {isa = PBXBuildFile; fileRef = F1E49705210B2F260020132B /* PNTMDraggablePlaceDetails.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -31,6 +32,7 @@
 
 /* Begin PBXFileReference section */
 		F1315A7F210CA87A0047AA70 /* Assets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Assets.swift; sourceTree = "<group>"; };
+		F1732BDE2135F590007D6E5A /* UIScrollViewHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIScrollViewHelpers.swift; sourceTree = "<group>"; };
 		F1818221210E5DB80065715B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		F1818223210E5DD00065715B /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
 		F1818224210E5E060065715B /* Localizable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Localizable.swift; sourceTree = "<group>"; };
@@ -124,6 +126,7 @@
 				F1E49731210B5BBF0020132B /* UIApplicationHelpers.swift */,
 				F1E49732210B5BBF0020132B /* StringHelpers.swift */,
 				F1E49733210B5BBF0020132B /* UIAlertControllerHelpers.swift */,
+				F1732BDE2135F590007D6E5A /* UIScrollViewHelpers.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -241,6 +244,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F1E4974B210B5BC00020132B /* ContactCell.swift in Sources */,
+				F1732BDF2135F590007D6E5A /* UIScrollViewHelpers.swift in Sources */,
 				F1E4974E210B5BC00020132B /* TableView.swift in Sources */,
 				F1E49745210B5BC00020132B /* StringHelpers.swift in Sources */,
 				F1E49748210B5BC00020132B /* DraggablePlaceDetailsViewController.swift in Sources */,
