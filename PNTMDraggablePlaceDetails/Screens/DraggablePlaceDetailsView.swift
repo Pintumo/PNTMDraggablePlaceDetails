@@ -51,6 +51,8 @@ class DraggablePlaceDetailsView: UIView {
         self.collectionView.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
         self.collectionView.rightAnchor.constraint(equalTo: self.rightAnchor).isActive = true
         
+        self.pageControl.hidesForSinglePage = true
+        self.pageControl.numberOfPages = 1
         self.addSubview(self.pageControl)
         self.pageControl.translatesAutoresizingMaskIntoConstraints = false
         self.pageControl.centerXAnchor.constraint(equalTo: self.collectionView.centerXAnchor).isActive = true
@@ -100,11 +102,10 @@ extension DraggablePlaceDetailsView {
     }
     
     func setPageControlWithNumberOfPages(_ numberOfPages: Int){
-        guard numberOfPages > 1 else { return }
         
         self.pageControl.numberOfPages = numberOfPages
         self.pageControl.currentPage = 0
-        self.pageControl.displayCount = 4
+        self.pageControl.displayCount = numberOfPages < 5 ? numberOfPages : 5
         
         self.pageControl.dotSize = 9
         self.pageControl.smallDotSizeRatio = 0.5
