@@ -2,63 +2,6 @@ import Kingfisher
 import UIKit
 
 public class DraggablePlaceDetailsViewController: UIViewController {
-
-    // MARK: - Public Style
-
-    public var placeHolderImage: UIImage?
-    
-    public var mainColor: UIColor = UIColor.blue {
-        didSet {
-            self.dataStore.mainColor = mainColor
-        }
-    }
-    public var secondaryColor: UIColor = UIColor.white {
-        didSet {
-            self.dataStore.secondaryColor = secondaryColor
-        }
-    }
-    public var textColor = UIColor(white: 0.4, alpha: 1.0) {
-        didSet {
-            self.dataStore.textColor = textColor
-        }
-    }
-    public var lightTextColor = UIColor(white: 0.2, alpha: 1.0) {
-        didSet {
-            self.dataStore.lightTextColor = lightTextColor
-        }
-    }
-    
-    public var routeButtonImage: UIImage? {
-        set(newValue) { self.dataStore.routeButtonImage = newValue }
-        get { return self.dataStore.routeButtonImage}
-    }
-    
-    public var shareButtonImage: UIImage? {
-        set(newValue) { self.dataStore.shareButtonImage = newValue }
-        get { return self.dataStore.shareButtonImage}
-    }
-
-    public var addressLabelImage: UIImage? {
-        set(newValue) { self.dataStore.addressLabelImage = newValue }
-        get { return self.dataStore.addressLabelImage}
-    }
-    
-    public var openingHoursLabelImage: UIImage? {
-        set(newValue) { self.dataStore.openingHoursLabelImage = newValue }
-        get { return self.dataStore.openingHoursLabelImage}
-    }
-    
-    public var phoneLabelImage: UIImage? {
-        set(newValue) { self.dataStore.phoneLabelImage = newValue }
-        get { return self.dataStore.phoneLabelImage}
-    }
-    
-    public var websiteLabelImage: UIImage? {
-        set(newValue) { self.dataStore.websiteLabelImage = newValue }
-        get { return self.dataStore.websiteLabelImage}
-    }
-
-    public var dismissIcon: UIImage?
     
     public init(_ model: DraggablePlaceDetailsPlaceModel) {
         self.dataStore = DraggablePlaceDetailsStore(model: model)
@@ -80,9 +23,9 @@ public class DraggablePlaceDetailsViewController: UIViewController {
     }
 
     override public func loadView() {
-        contentView.mainColor = self.mainColor
-        contentView.secondaryColor = self.secondaryColor
-        contentView.cancelIcon = self.dismissIcon
+        contentView.mainColor = Constants.mainColor
+        contentView.secondaryColor = Constants.secondaryColor
+        contentView.cancelIcon = Constants.dismissIcon
         self.view = contentView
     }
 
@@ -107,7 +50,7 @@ extension DraggablePlaceDetailsViewController: UICollectionViewDelegate, UIColle
     
     public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell =  self.contentView.dequeCellForImageIndexPath(indexPath)
-        if indexPath.row == 0, let image = self.placeHolderImage {
+        if indexPath.row == 0, let image = Constants.placeHolderImage {
             cell.imageView.image = image
         } else if let url = self.dataStore.photoAtIndexPath(indexPath) {
             cell.imageView.kf.setImage(with: url)
@@ -134,8 +77,8 @@ extension DraggablePlaceDetailsViewController: UITableViewDataSource, UITableVie
     
     public func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
         guard let header = view as? UITableViewHeaderFooterView else { return }
-        header.contentView.backgroundColor = self.secondaryColor
-        header.textLabel?.textColor = self.textColor
+        header.contentView.backgroundColor = Constants.secondaryColor
+        header.textLabel?.textColor = Constants.textColor
         header.textLabel?.font = Constants.reviewHeaderFont
     }
     

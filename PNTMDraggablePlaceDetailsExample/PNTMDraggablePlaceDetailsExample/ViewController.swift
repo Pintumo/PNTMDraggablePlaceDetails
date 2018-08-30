@@ -56,10 +56,10 @@ extension ViewController {
     @objc func didTapButtonForDetails() {
         let model = ViewController.createModelWithReviews(false)
         let vc = DraggablePlaceDetailsViewController(model)
-        vc.dismissIcon = UIImage(named: "icon_dismiss")
-        vc.mainColor = .red
-        vc.textColor = .brown
-        vc.lightTextColor = .gray
+        Constants.dismissIcon = UIImage(named: "icon_dismiss")
+        Constants.mainColor = .red
+        Constants.textColor = .brown
+        Constants.lightTextColor = .gray
         self.present(vc, animated: true, completion: nil)
 
         DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {

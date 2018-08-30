@@ -2,11 +2,11 @@ import UIKit
 
 class HeaderCell: UITableViewCell {
     
-    public var name: String? { didSet { self.nameLabel.text = name }}
-    public var tags: [String]? { didSet { self.setTags(tags) }}
-    public var isOpen: Bool? { didSet { self.setIsOpen(isOpen) }}
-    public var rating: Float? { didSet { self.setRating(rating) }}
-    public var priceLevel: Int? { didSet { self.setPriceLevel(priceLevel) }}
+    var name: String? { didSet { self.nameLabel.text = name }}
+    var tags: [String]? { didSet { self.setTags(tags) }}
+    var isOpen: Bool? { didSet { self.setIsOpen(isOpen) }}
+    var rating: Float? { didSet { self.setRating(rating) }}
+    var priceLevel: Int? { didSet { self.setPriceLevel(priceLevel) }}
     
     let routeButton = UIButton(type: .custom)
     let shareButton = UIButton(type: .custom)
@@ -16,14 +16,14 @@ class HeaderCell: UITableViewCell {
     private let isOpenLabel = UILabel()
     private var ratingView: RatingView?
     
-    init(mainColor: UIColor) {
+    init() {
         super.init(style: .default, reuseIdentifier: nil)
         self.selectionStyle = .none
         
         let buttonHeigth: CGFloat = 40
         
         self.nameLabel.font = Constants.headerFont
-        self.nameLabel.textColor = mainColor
+        self.nameLabel.textColor = Constants.mainColor
         self.nameLabel.numberOfLines = 1
         self.addSubview(self.nameLabel)
         self.nameLabel.translatesAutoresizingMaskIntoConstraints = false
@@ -32,14 +32,14 @@ class HeaderCell: UITableViewCell {
         self.nameLabel.leftAnchor.constraint(equalTo: self.leftAnchor, constant: Constants.cellInset).isActive = true
         
         self.tagsLabel.font = Constants.subLabelFont
-        self.tagsLabel.textColor = Constants.mainColor
+        self.tagsLabel.textColor = Constants.cellTagsColor
         self.addSubview(self.tagsLabel)
         self.tagsLabel.translatesAutoresizingMaskIntoConstraints = false
         self.tagsLabel.topAnchor.constraint(equalTo: self.nameLabel.bottomAnchor, constant: 10).isActive = true
         self.tagsLabel.leftAnchor.constraint(equalTo: self.nameLabel.leftAnchor).isActive = true
         
         self.isOpenLabel.font = Constants.subLabelFont
-        self.isOpenLabel.textColor = Constants.mainColor
+        self.isOpenLabel.textColor = Constants.cellTagsColor
         self.addSubview(self.isOpenLabel)
         self.isOpenLabel.translatesAutoresizingMaskIntoConstraints = false
         self.isOpenLabel.centerYAnchor.constraint(equalTo: self.tagsLabel.centerYAnchor).isActive = true
@@ -54,7 +54,7 @@ class HeaderCell: UITableViewCell {
         self.routeButton.imageView?.contentMode = .scaleAspectFit
         self.routeButton.imageView?.tintColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         self.routeButton.setTitleColor(.white, for: .normal)
-        self.routeButton.backgroundColor = mainColor
+        self.routeButton.backgroundColor = Constants.mainColor
         self.addSubview(self.routeButton)
         self.routeButton.translatesAutoresizingMaskIntoConstraints = false
         self.routeButton.topAnchor.constraint(equalTo: self.isOpenLabel.bottomAnchor, constant: 50).isActive = true
@@ -70,7 +70,7 @@ class HeaderCell: UITableViewCell {
         self.shareButton.imageView?.contentMode = .scaleAspectFit
         self.shareButton.imageView?.tintColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         self.shareButton.setTitleColor(.white, for: .normal)
-        self.shareButton.backgroundColor = mainColor
+        self.shareButton.backgroundColor = Constants.mainColor
         self.addSubview(self.shareButton)
         self.shareButton.translatesAutoresizingMaskIntoConstraints = false
         self.shareButton.centerYAnchor.constraint(equalTo: self.routeButton.centerYAnchor).isActive = true
