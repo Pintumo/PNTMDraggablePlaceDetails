@@ -33,6 +33,8 @@ public struct Constants {
     public static var websiteLabelImage: UIImage?
     public static var dismissIcon: UIImage?
     
+    public static var poweredByImage: UIImage?
+    
     internal static let DPDImageReuseIdentifier = "DraggablePlaceDetailsImageReuseIdentifier"
     internal static let DPDReviewReuseIdentifier = "DraggablePlaceDetailsReviewReuseIdentifier"
     

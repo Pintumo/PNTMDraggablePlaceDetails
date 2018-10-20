@@ -110,6 +110,7 @@ struct DraggablePlaceDetailsStore {
         cell.starType = model.provider == "g" ? .g : .y
         cell.rating = model.rating
         cell.priceLevel = model.price_level
+        cell.poweredByImage = Constants.poweredByImage
         return cell
     }
     

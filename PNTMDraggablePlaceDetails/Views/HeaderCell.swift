@@ -9,6 +9,8 @@ class HeaderCell: UITableViewCell {
     var rating: Float? { didSet { self.setRating(rating) }}
     var priceLevel: Int? { didSet { self.setPriceLevel(priceLevel) }}
     
+    var poweredByImage: UIImage? { didSet { self.setPoweredBy(poweredByImage) } }
+    
     let routeButton = UIButton(type: .custom)
     let shareButton = UIButton(type: .custom)
     
@@ -16,6 +18,7 @@ class HeaderCell: UITableViewCell {
     private let tagsLabel = UILabel()
     private let isOpenLabel = UILabel()
     private var ratingView: RatingView?
+    private var poweredByImageView: UIImageView?
     
     init() {
         super.init(style: .default, reuseIdentifier: nil)
@@ -130,6 +133,18 @@ class HeaderCell: UITableViewCell {
         } else {
             self.tagsLabel.text = ""
         }
+    }
+    
+    private func setPoweredBy(_ image: UIImage?) {
+        guard let image = image else { return }
+        self.poweredByImageView = UIImageView(image: image)
+        self.poweredByImageView?.clipsToBounds = true
+        self.poweredByImageView?.contentMode = .scaleAspectFit
+        self.addSubview(self.poweredByImageView!)
+        self.poweredByImageView!.translatesAutoresizingMaskIntoConstraints = false
+        self.poweredByImageView!.topAnchor.constraint(equalTo: self.isOpenLabel.bottomAnchor, constant: 15).isActive = true
+        self.poweredByImageView!.rightAnchor.constraint(equalTo: self.shareButton.rightAnchor).isActive = true
+        self.poweredByImageView!.heightAnchor.constraint(equalToConstant: 24)
     }
     
     private func setIsOpen(_ isOpen: Bool?) {
