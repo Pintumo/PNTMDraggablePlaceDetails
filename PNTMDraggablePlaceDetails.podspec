@@ -4,7 +4,7 @@
 Pod::Spec.new do |s|
   s.name               = "PNTMDraggablePlaceDetails"
   s.swift_version      = "4.2"
-  s.version            = "0.3.0"
+  s.version            = "0.4.0"
   s.summary            = "Simple Library to display details of POIs."
   s.description        = "Simple Library to display details of POIs in a draggable modally presented UIViewController."
   s.homepage           = "https://github.com/Pintumo/PNTMDraggablePlaceDetails"
@@ -17,6 +17,7 @@ Pod::Spec.new do |s|
   s.public_header_files = "PNTMDraggablePlaceDetails/**/*.h"
   s.resources           = "PNTMDraggablePlaceDetails/**/*.xcassets", "PNTMDraggablePlaceDetails/**/*.lproj/*.strings"
   # s.frameworks         = "SomeFramework", "AnotherFramework"
+  s.dependency "SnapKit"
   s.dependency "FlexiblePageControl"
   s.dependency "Kingfisher"
 end

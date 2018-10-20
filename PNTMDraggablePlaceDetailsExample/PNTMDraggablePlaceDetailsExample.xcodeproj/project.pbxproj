@@ -177,20 +177,22 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-PNTMDraggablePlaceDetailsExample/Pods-PNTMDraggablePlaceDetailsExample-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-PNTMDraggablePlaceDetailsExample/Pods-PNTMDraggablePlaceDetailsExample-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/FlexiblePageControl/FlexiblePageControl.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/PNTMDraggablePlaceDetails/PNTMDraggablePlaceDetails.framework",
+				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FlexiblePageControl.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PNTMDraggablePlaceDetails.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PNTMDraggablePlaceDetailsExample/Pods-PNTMDraggablePlaceDetailsExample-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-PNTMDraggablePlaceDetailsExample/Pods-PNTMDraggablePlaceDetailsExample-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		B9558952CE4F44115FEA899C /* [CP] Check Pods Manifest.lock */ = {

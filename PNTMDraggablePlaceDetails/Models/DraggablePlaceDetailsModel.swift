@@ -15,6 +15,7 @@ public struct DraggablePlaceDetailsPlaceModel {
     let open_now: Bool?
     let open_periods: [DraggablePlaceDetailsOpenHoursModel]?
     let reviews: [DraggablePlaceDetailsReviewModel]?
+    let provider: String? // currently google = "g" & yelp = "y" are supported provider
     
     public init(googlePlaceId: String? = nil,
                 name: String? = nil,
@@ -29,7 +30,8 @@ public struct DraggablePlaceDetailsPlaceModel {
                 photos: [String]? = nil,
                 open_now: Bool? = nil,
                 open_periods: [DraggablePlaceDetailsOpenHoursModel]? = nil,
-                reviews: [DraggablePlaceDetailsReviewModel]? = nil) {
+                reviews: [DraggablePlaceDetailsReviewModel]? = nil,
+                provider: String? = "g") {
         self.googlePlaceId = googlePlaceId
         self.name = name
         self.localizedTags = localizedTags
@@ -44,6 +46,7 @@ public struct DraggablePlaceDetailsPlaceModel {
         self.open_now = open_now
         self.open_periods = open_periods
         self.reviews = reviews
+        self.provider = provider
     }
     
     

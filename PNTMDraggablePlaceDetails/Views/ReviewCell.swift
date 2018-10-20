@@ -35,7 +35,7 @@ class ReviewCell: UITableViewCell {
     
     private func setRating(_ rating: Float?) {
         guard let rating = rating else { return }
-        let ratingView = RatingView(rating: rating)
+        let ratingView = RatingView(with: CGFloat(rating))
         self.addSubview(ratingView)
         ratingView.translatesAutoresizingMaskIntoConstraints = false
         ratingView.centerYAnchor.constraint(equalTo: self.nameLabel.centerYAnchor).isActive = true

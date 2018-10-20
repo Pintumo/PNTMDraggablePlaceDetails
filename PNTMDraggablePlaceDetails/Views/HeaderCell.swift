@@ -5,6 +5,7 @@ class HeaderCell: UITableViewCell {
     var name: String? { didSet { self.nameLabel.text = name }}
     var tags: [String]? { didSet { self.setTags(tags) }}
     var isOpen: Bool? { didSet { self.setIsOpen(isOpen) }}
+    var starType: RatingView.starType = .g
     var rating: Float? { didSet { self.setRating(rating) }}
     var priceLevel: Int? { didSet { self.setPriceLevel(priceLevel) }}
     
@@ -94,7 +95,7 @@ class HeaderCell: UITableViewCell {
     
     private func setRating(_ rating: Float?) {
         guard let rating = rating else { return }
-        self.ratingView = RatingView(rating: rating)
+        self.ratingView = RatingView(with: CGFloat(rating), starType: self.starType)
         self.addSubview(self.ratingView!)
         self.ratingView!.translatesAutoresizingMaskIntoConstraints = false
         self.ratingView!.topAnchor.constraint(equalTo: self.isOpenLabel.bottomAnchor, constant: 15).isActive = true

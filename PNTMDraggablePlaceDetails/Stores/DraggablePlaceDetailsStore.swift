@@ -107,6 +107,7 @@ struct DraggablePlaceDetailsStore {
         cell.name = self.titleForType(.header)
         cell.tags = model.localizedTags
         cell.isOpen = model.open_now
+        cell.starType = model.provider == "g" ? .g : .y
         cell.rating = model.rating
         cell.priceLevel = model.price_level
         return cell
